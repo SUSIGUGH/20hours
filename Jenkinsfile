@@ -42,6 +42,7 @@ stage('Run Container from Image')
 {
 steps
 {
+sh 'sudo docker stop httpdtst01'
 sh 'sudo docker rm httpdtst01'
 sh 'sudo docker run -dit --name httpdtst01 -p8027:80 susigugh/httpdtst:v.2'
 sh 'sudo docker ps | grep httpdtst01'
