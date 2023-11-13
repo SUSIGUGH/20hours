@@ -38,6 +38,15 @@ sh 'sudo docker login -u=susigugh -p=UniBall@2528 && sudo docker push susigugh/h
 }
 }
 
+stage('Run Container from Image')
+{
+steps
+{
+sh 'sudo docker run --name httpdtst01 -p8027:80 susigugh/httpdtst:v.2'
+sh 'sudo docker ps | grep httpdtst01'
+}
+}
+
 
 }
 }
