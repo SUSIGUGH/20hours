@@ -34,7 +34,7 @@ stage('Push Docker Image to Dockerhub')
 {
 steps
 {
-sh 'sudo docker login -u=${udockersusigugh} -p={pdockersusiugh} && sudo docker push susigugh/httpdtst:v.2'
+sh 'sudo docker login -u=${udockersusigugh} -p=${pdockersusiugh} && sudo docker push susigugh/httpdtst:v.2'
 }
 }
 
