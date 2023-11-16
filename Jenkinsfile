@@ -56,7 +56,7 @@ stage('Create AWS resource')
         sh 'terraform init'
         sh 'terraform plan'
         sh 'terraform apply -auto-approve'
-        sh 'terraform destroy -auto-approve'
+        //sh 'terraform destroy -auto-approve'
 
     }
 }
