@@ -100,7 +100,7 @@ resource "aws_instance" "httpd" {
  tags = {
     Name = "httpd"
   }
-  key_name = "susigugh-ec202"
+  key_name = "susigugh"
 }
 
 
