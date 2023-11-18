@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpdtst
+  labels:
+    app: httpdtst
+  namespace: dev01
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: httpdtst
+  template:
+    metadata:
+      name: httpdtst
+      labels:
+        app: httpdtst
+    spec:
+      containers:
+        - name: httpdtst
+          image: susigugh/httpdtst:v.2
+          ports:
+          - containerPort: 80
