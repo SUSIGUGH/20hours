@@ -49,17 +49,6 @@ sh 'sudo docker ps | grep httpdtst01'
 }
 }
 
-stage('Create AWS resource')
-{
-    steps
-    {
-        sh 'terraform init'
-        sh 'terraform plan'
-        sh 'terraform apply -auto-approve'
-        sh 'terraform destroy -auto-approve'
-
-    }
-}
 
 stage('Deploy HTTPD POD in Kubernetes')
 {
