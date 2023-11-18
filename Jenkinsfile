@@ -66,7 +66,8 @@ stage('Deploy HTTPD POD in Kubernetes')
     steps
     {
         sh 'chmod 600 jmtksrv01.pem'
-        sh 'scp -i jmtksrv01.pem httpd01.yml ec2-user@ec2-13-233-148-180.ap-south-1.compute.amazonaws.com:/home/ec2-user/'
+        sh 'scp -i jmtksrv01.pem -o StrictHostKeyChecking=no httpd01.yml ec2-user@ec2-13-233-148-180.ap-south-1.compute.amazonaws.com:/home/ec2-user/'
+        sh 'ssh -i jmtksrv01.pen -o StrictHostKeyChecking=no ec2-user@ec2-13-233-148-180.ap-south-1.compute.amazonaws.com && kubectl create -f httpd01.yml'
     }
 }
 
